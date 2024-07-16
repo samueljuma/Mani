@@ -63,9 +63,15 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+
+            //dependency for datetime
+            implementation(libs.kotlinx.datetime)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
+        }
+        wasmJsMain.dependencies {
+            implementation(npm("@js-joda/timezone", "2.3.0"))
         }
     }
 }
